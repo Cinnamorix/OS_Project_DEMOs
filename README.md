@@ -31,7 +31,7 @@ This app helps classify songs into playlists based on their characteristics, suc
 
 
 ### ✅ Prerequisites
-
+- Dowload Music Playlist Classifier App File from Github: https://github.com/Cinnamorix/OS_Project_DEMOs/tree/main/streamlit
 - Python 3.7 or higher
 - Operating System: Windows / macOS / Linux
 
@@ -83,6 +83,11 @@ SCALER_PATH = os.path.join(SCRIPT_DIR, "scaler.joblib")
 
 Once everything is ready, open Terminal/Command Prompt, navigate to the folder containing the script, and run:
 
+You need to cd to your streamlit path first:
+```bash
+cd "<your script path>"
+```
+And use command to run streamlit app:
 ```bash
 streamlit run your_script_name.py
 ```
@@ -90,6 +95,7 @@ streamlit run your_script_name.py
 **Example:**
 
 ```bash
+cd "C:\Users\6688999\Downloads\OS_DEMOS_PJ"
 streamlit run music_playlist_classify.py
 ```
 
