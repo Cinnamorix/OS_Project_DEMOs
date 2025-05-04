@@ -1,18 +1,15 @@
 # 📂 OS_Project_DEMOs
 # 🤖 Analysis And Model Training Part (Colab)
 ### [ Files ]
-
+- **Code_execution.mp4**: Code Execution Demo Video (if you cannot dowload it: https://www.youtube.com/watch?v=J6EBxiT1VMY).
 - **FinalProject_OS.ipynb**: Python file for data processing and training the model.
-- **Testing_file.**: File for testing the model.
+- **We are - 13_3_68 05.15.mp3**: File for testing the model.
 - **audio_features_augmented.csv**: Data file generated from data processing (run cell 4 in Colab).
-- **scaler.joblib**: Scaler file for normalizing features.
-- **Code_execution**: This file is a demonstration of our code.
-
--- streamlit
-   - **audio_features_with_single_playlist_prediction.csv**: Labeled data file (run cell 5 in Colab).
+- **audio_features_with_single_playlist_prediction.csv**: Labeled data file (run cell 5 in Colab).
+- **steamlit (Floder)**
    - **music_playlist_classify.py**: Streamlit app script.
    - **playlist_classifier_model.joblib**: Trained model file.
-
+   - **scaler.joblib**: Scaler file for normalizing features.
 
 #### [ Tutorial ]
 
