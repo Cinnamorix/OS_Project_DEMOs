@@ -3,7 +3,7 @@
 ### [ Files ]
 
 - **FinalProject_OS.ipynb**: Python file for data processing and training the model.
-- **We are - 13_3_68 05.15.mp3**: File for testing the model.
+- **Testing_file.**: File for testing the model.
 - **audio_features_augmented.csv**: Data file generated from data processing (run cell 4 in Colab).
 - **audio_features_with_single_playlist_prediction.csv**: Labeled data file (run cell 5 in Colab).
 - **music_playlist_classify.py**: Streamlit app script.
