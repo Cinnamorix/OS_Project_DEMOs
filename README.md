@@ -1,35 +1,116 @@
-# OS_Project_DEMOs
+# 📂 OS_Project_DEMOs
+# 🤖 Analysis And Model Training Part (Colab)
+### [ Files ]
 
-[ File ]
+- **FinalProject_OS.ipynb**: Python file for data processing and training the model.
+- **We are - 13_3_68 05.15.mp3**: File for testing the model.
+- **audio_features_augmented.csv**: Data file generated from data processing (run cell 4 in Colab).
+- **audio_features_with_single_playlist_prediction.csv**: Labeled data file (run cell 5 in Colab).
+- **music_playlist_classify.py**: Streamlit app script.
+- **playlist_classifier_model.joblib**: Trained model file.
+- **scaler.joblib**: Scaler file for normalizing features.
 
-FinalProject_OS.ipynb
-  This file is the python file that have data processing and code for training model.
+#### [ Tutorial ]
 
-We are - 13_3_68 05.15.mp3
-  This file is for testing the model.
+1. Open Colab.
+2. Run cell 1 to install the required libraries.
+3. Run cell 2 to import the dataset from Kaggle.
+4. Run cell 3 to get the file path.
+5. Replace the file path in the `AUDIO_ROOT` variable.
+6. Run cell 4 to process the data and generate the `audio_features_augmented.csv` file.
+7. Run cell 5 to label the playlist type and train the model. This will generate the `audio_features_with_single_playlist_prediction.csv` and `playlist_classifier_model.joblib` files.
 
-audio_features_augmented.csv
-  This file is a data file that is the result from data processing. That come from running cell 4 in the colab.
+---
 
-audio_features_with_single_playlist_prediction.csv
-  This file is a data file after labeled. This file be recived from after running cell 5 in the colab.
+# 🎵 Music Playlist Classifier Part (Streamlit App) 
 
-music_playlist_classify.py
-  This is streamlit file.
+### 📝 Description
 
-playlist_classifier_model.joblib
-  This is the model after training.
-
-scaler.joblib
-  This is the scaler file.
+This app helps classify songs into playlists based on their characteristics, such as BPM, pitch, and MFCC. It supports both uploading audio files and providing YouTube links.
 
 
-[ Tutorial ]
 
-1. Go to the colab
-2. Run cell 1 to installing the package
-3. Run cell 2 to import data set from Kaggle.
-4. Run cell 3 and you will recived the file path.
-5. Replace the file path at AUDIO_ROOT.
-6. Run cell 4 to process the data and will recive the csv. (audio_features_augmented.csv)
-7. Run cell 5 to label the playlist type in the data and train the model you will get .CSV file and model (audio_features_with_single_playlist_prediction.csv, playlist_classifier_model.joblib)
+### ✅ Prerequisites
+
+- Python 3.7 or higher
+- Operating System: Windows / macOS / Linux
+
+
+
+### 📦 Install Required Libraries
+
+Open Command Prompt or Terminal and run the following command:
+
+```bash
+pip install streamlit librosa joblib pandas numpy yt-dlp matplotlib scikit-learn
+```
+
+> 💡 Note: If you are using macOS or Linux, you may need to use `pip3` instead of `pip`.
+
+
+### 🔧 Install FFmpeg
+
+FFmpeg is required for downloading and converting files from YouTube.
+
+1. Download FFmpeg from: [https://ffmpeg.org/download.html](https://ffmpeg.org/download.html) or
+   [https://github.com/BtbN/FFmpeg-Builds/releases](https://github.com/BtbN/FFmpeg-Builds/releases)
+
+2. Extract the files and note the path to `ffmpeg.exe`.
+
+3. Open the Python file and update the following line to match the path on your machine:
+
+```python
+FFMPEG_PATH = r"C:\ffmpeg\bin"  # Update the path to match your system
+```
+
+
+### 🧠 Prepare Model Files
+
+Place the following files in the same folder as the Python script:
+
+- `playlist_classifier_model.joblib` → The trained model
+- `scaler.joblib` → The scaler used to normalize features before prediction
+
+If the model files are located elsewhere, update the following lines in the script:
+
+```python
+MODEL_PATH = os.path.join(SCRIPT_DIR, "playlist_classifier_model.joblib")
+SCALER_PATH = os.path.join(SCRIPT_DIR, "scaler.joblib")
+```
+
+
+### 🎯 Run the App
+
+Once everything is ready, open Terminal/Command Prompt, navigate to the folder containing the script, and run:
+
+```bash
+streamlit run your_script_name.py
+```
+
+**Example:**
+
+```bash
+streamlit run music_playlist_classify.py
+```
+
+
+### 🌐 Usage
+
+1. The app will automatically open in your web browser.
+2. Select **Upload Audio File** to upload a `.mp3` or `.wav` file.
+3. Alternatively, select **Use YouTube URL** and provide a YouTube link.
+4. The app will display the waveform, make predictions, and suggest a playlist.
+
+
+### 🧹 Temporary File Management
+
+If a YouTube URL is used, the system will download a `.wav` file temporarily and delete it automatically after processing.
+
+
+### 📞 Troubleshooting
+
+- If YouTube videos cannot be downloaded, ensure FFmpeg is correctly configured.
+- If audio file loading fails, the file may be unsupported or corrupted.
+- If the app is unresponsive, check the error log in the terminal.
+
+---
